@@ -1,0 +1,879 @@
+---
+import '../styles/truemed.css';
+---
+
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>TRUEMED — Quản lý toàn bộ quá trình khám chữa bệnh của bạn</title>
+		<meta name="description" content="TRUEMED giúp bạn chủ động đặt lịch khám theo khung giờ, số hóa & đồng bộ toàn bộ hồ sơ y tế từ đơn thuốc, kết quả xét nghiệm đến nhắc lịch tái khám tự động." />
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+	</head>
+	<body>
+		<!-- 1. NAVIGATION HEADER -->
+		<nav>
+			<div class="row">
+				<a href="#" class="logo-brand">
+					<img src="/logo-new.png" alt="TrueMed Logo" style="height: 48px; width: auto;" />
+				</a>
+				
+				<ul>
+					<li><a href="#market">Bối cảnh thị trường</a></li>
+					<li><a href="#persona">User Persona & Interview</a></li>
+					<li><a href="#bpmn-asis">BPMN As-Is</a></li>
+					<li><a href="#problem">Problem</a></li>
+					<li><a href="#usecase">Use Case</a></li>
+					<li><a href="#bpmn-tobe">BPMN To-Be</a></li>
+					<li><a href="#mockup">UI Mockup</a></li>
+					<li><a href="#erd">ERD</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main>
+			<!-- 2. HERO SECTION -->
+			<section class="hero" id="hero" style="padding-top: 80px; padding-bottom: 0;">
+				<div class="wrap" style="max-width: 100%; padding: 0;">
+					<img src="/anh-nen.png" alt="TRUEMED - Quản lý toàn bộ quá trình khám chữa bệnh" style="width: 100%; height: auto; display: block; border-radius: 0;" />
+				</div>
+			</section>
+
+			<!-- MARQUEE STRIP -->
+			<div class="strip">
+				<div class="track">
+					<span><b>TRUEMED HEALTH TECH</b> — ĐỒNG BỘ HỒ SƠ Y TẾ CÁ NHÂN</span>
+					<span>•</span>
+					<span><b>CẮT GIẢM 80% THỜI GIAN CHỜ ĐỜI</b> TẠI BỆNH VIỆN</span>
+					<span>•</span>
+					<span><b>NHẮC UỐNG THUỐC TỰ ĐỘNG</b> BẢO VỆ SỨC KHỎE GIA ĐÌNH</span>
+					<span>•</span>
+					<span><b>TRUEMED HEALTH TECH</b> — ĐỒNG BỘ HỒ SƠ Y TẾ CÁ NHÂN</span>
+				</div>
+			</div>
+
+			<!-- 3. MARKET CONTEXT -->
+			<section class="block" id="market">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>Bối cảnh thị trường</h2>
+					</div>
+
+					<div class="mkt-callout" style="background: var(--mint-soft); border-left-color: var(--mint-deep); margin-bottom: 28px;">
+						<p style="color: var(--navy); font-weight: 500;">
+							🏆 <b>Thị trường Health-Tech Đông Nam Á:</b> Việt Nam hiện đứng thứ 5 về quy mô thị trường Health-Tech tại Đông Nam Á (sau Indonesia, Thái Lan, Malaysia và Philippines).
+						</p>
+					</div>
+
+					<!-- Hình ảnh Sơ đồ Quy mô & Tiềm năng thị trường -->
+					<div style="max-width: 960px; margin: 0 auto 36px;">
+						<img src="/so-do.png" alt="Quy Mô và Tốc Độ Tăng Trưởng Thị Trường Health Tech Việt Nam (2023 - 2031)" style="width:100%; border-radius: 18px; border: 1px solid var(--line); box-shadow: var(--shadow-md);" />
+					</div>
+
+					<!-- 1. Đối tượng mục tiêu -->
+					<div style="margin-bottom: 36px;">
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading);">1. Đối tượng mục tiêu chính</h3>
+						<div class="tablecard">
+							<table>
+								<thead>
+									<tr>
+										<th>Nhóm đối tượng mục tiêu</th>
+										<th>Nhu cầu & Hành vi thực tế</th>
+										<th>Giải pháp TRUEMED đáp ứng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b>Người dùng hiện đại</b></td>
+										<td>Chủ động ứng dụng công nghệ trong theo dõi & chăm sóc sức khỏe gia đình.</td>
+										<td>Đặt lịch hẹn online slot giờ, thanh toán không tiền mặt.</td>
+									</tr>
+									<tr>
+										<td><b>Người mắc bệnh mãn tính</b></td>
+										<td>Cần quản lý hồ sơ khám liên tục, lưu giữ toa thuốc dài hạn.</td>
+										<td>Số hóa hồ sơ cloud, xem kết quả xét nghiệm mọi lúc.</td>
+									</tr>
+									<tr>
+										<td><b>Bệnh nhân tái khám định kỳ</b></td>
+										<td>Dễ quên thời gian tái khám và thời điểm uống thuốc hàng ngày.</td>
+										<td>Thông báo nhắc lịch tái khám & Smart Medication Alarm.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- 2. Giải pháp hiện tại trên thị trường (Nội dung bảng từ giải pháp hiện tại.docx) -->
+					<div style="margin-bottom: 36px;">
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 12px; font-family: var(--font-heading);">2. Giải pháp hiện tại trên thị trường</h3>
+						
+						<!-- Ghi chú chú thích -->
+						<div style="display: flex; gap: 20px; margin-bottom: 16px; font-size: 13.5px; background: #fff; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line); color: var(--muted); flex-wrap: wrap;">
+							<span><b>Ghi chú:</b></span>
+							<span style="color: #1f7a3a;"><b>✓</b> Hỗ trợ tốt (Tính năng hoàn chỉnh, tự động)</span>
+							<span style="color: #8a6d00;"><b>Δ</b> Hỗ trợ một phần (Có tính năng nhưng hạn chế/thủ tục rườm rà)</span>
+							<span style="color: #b23a3a;"><b>✗</b> Không hỗ trợ (Chưa có tính năng này)</span>
+						</div>
+
+						<div class="tablecard">
+							<table>
+								<thead>
+									<tr>
+										<th>Tính năng</th>
+										<th style="text-align: center;">Truyền thống<br/><span style="font-weight:400; font-size:11px; text-transform:none;">(Đến trực tiếp)</span></th>
+										<th style="text-align: center;">App riêng của từng BV<br/><span style="font-weight:400; font-size:11px; text-transform:none;">(App ĐHYD, Chợ Rẫy...)</span></th>
+										<th style="text-align: center;">Nền tảng bên thứ 3<br/><span style="font-weight:400; font-size:11px; text-transform:none;">(BookingCare, YouMed...)</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b>Đăng ký khám</b></td>
+										<td class="gap-p">Δ</td>
+										<td class="gap-y">✓</td>
+										<td class="gap-y">✓</td>
+									</tr>
+									<tr>
+										<td><b>Chọn bác sĩ</b></td>
+										<td class="gap-n">✗</td>
+										<td class="gap-p">Δ</td>
+										<td class="gap-y">✓</td>
+									</tr>
+									<tr>
+										<td><b>Chọn khung giờ khám</b></td>
+										<td class="gap-n">✗</td>
+										<td class="gap-p">Δ</td>
+										<td class="gap-y">✓</td>
+									</tr>
+									<tr>
+										<td><b>Đặt lịch trước</b></td>
+										<td class="gap-n">✗</td>
+										<td class="gap-y">✓</td>
+										<td class="gap-y">✓</td>
+									</tr>
+									<tr>
+										<td><b>Nhắc lịch tái khám</b></td>
+										<td class="gap-n">✗</td>
+										<td class="gap-n">✗</td>
+										<td class="gap-n">✗</td>
+									</tr>
+									<tr>
+										<td><b>Quản lý bệnh án</b></td>
+										<td class="gap-p">Δ</td>
+										<td class="gap-p">Δ</td>
+										<td class="gap-p">Δ</td>
+									</tr>
+									<tr>
+										<td><b>Quản lý đơn thuốc</b></td>
+										<td class="gap-n">✗</td>
+										<td class="gap-n">✗</td>
+										<td class="gap-p">Δ</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- 3. Khoảng trống thị trường (Market Gap) -->
+					<div>
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading);">3. Khoảng trống thị trường (Market Gap)</h3>
+						<div class="mkt-callout" style="background: var(--mint-soft); border-left-color: var(--mint-deep);">
+							<p style="color: var(--navy);">✨ <b>Khoảng trống kết nối liên thông & Quản lý toàn trình:</b> Thị trường hiện nay hoàn toàn thiếu giải pháp tự động cho <b>"Nhắc lịch tái khám"</b>, đồng thời việc <b>"Quản lý bệnh án & Đơn thuốc"</b> vẫn còn rất hạn chế/phân mảnh. TRUEMED ra đời nhằm lấp đầy khoảng trống này bằng nền tảng y tế số tập trung liên thông đa viện.</p>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- 4. USER INTERVIEW -->
+			<section class="block alt" id="persona">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>User Interview</h2>
+					</div>
+
+					<div class="people" style="grid-template-columns: repeat(3, 1fr); margin-top: 24px;">
+						<!-- Person 1 -->
+						<div class="person">
+							<div class="avatar" style="width: 100%; height: 210px; overflow: hidden; background: #e8f1f9;">
+								<img src="/tien.png" alt="Mai Trung Tiến" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+							</div>
+							<div class="body">
+								<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+									<h3 style="font-size: 19px; color: var(--navy);">Mai Trung Tiến</h3>
+									<span style="font-size: 12px; background: var(--mint-soft); color: var(--mint-deep); font-weight: 700; padding: 2px 10px; border-radius: 20px;">STT 01</span>
+								</div>
+								<div class="role" style="margin-bottom: 8px;">28 tuổi · Kỹ sư phần mềm</div>
+								<div style="font-size: 12.5px; color: var(--muted); margin-bottom: 14px;">
+									<b>Tần suất đi khám:</b> 1-2 lần/năm<br/>
+									<b>Đặc điểm:</b> Ưu tiên sự tiện lợi
+								</div>
+
+								<div class="pblock" style="border-top: 1px solid var(--line); padding-top: 10px;">
+									<div class="lab">Thói quen khám chữa bệnh</div>
+									<ul>
+										<li>Thực hiện hầu hết các giao dịch qua ứng dụng di động.</li>
+										<li>Thường đi khám khi có dấu hiệu bệnh trở nặng vào cuối tuần hoặc sau giờ làm việc.</li>
+									</ul>
+								</div>
+								
+								<div class="pblock">
+									<div class="lab" style="color: #b23a3a;">Pain points (Nỗi đau)</div>
+									<ul>
+										<li>Không biết bác sĩ, khoa khám và nơi khám nào phù hợp với tình trạng.</li>
+										<li>Phải xin nghỉ làm để xếp hàng lấy số tại bệnh viện địa phương.</li>
+										<li>Chờ khám và thủ tục rất lâu dù thời gian bác sĩ khám chỉ vài phút.</li>
+									</ul>
+								</div>
+
+								<div class="pblock">
+									<div class="lab" style="color: var(--teal);">Kỳ vọng với TRUEMED</div>
+									<p style="font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 8px;">
+										Xem được lịch khám thời gian thực, đặt lịch trước và nhận thông báo nhắc nhở để chủ động sắp xếp công việc.
+									</p>
+								</div>
+
+								<div class="quote">
+									"Tôi muốn biết chính xác khi nào đến lượt mình, thay vì nghỉ cả 1 buổi thậm chí cả ngày chỉ để ngồi chờ."
+								</div>
+							</div>
+						</div>
+
+						<!-- Person 2 -->
+						<div class="person">
+							<div class="avatar" style="width: 100%; height: 210px; overflow: hidden; background: #e8f1f9;">
+								<img src="/van.png" alt="Vũ Thị Vân" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+							</div>
+							<div class="body">
+								<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+									<h3 style="font-size: 19px; color: var(--navy);">Vũ Thị Vân</h3>
+									<span style="font-size: 12px; background: var(--mint-soft); color: var(--mint-deep); font-weight: 700; padding: 2px 10px; border-radius: 20px;">STT 02</span>
+								</div>
+								<div class="role" style="margin-bottom: 8px;">31 tuổi · Kế toán</div>
+								<div style="font-size: 12.5px; color: var(--muted); margin-bottom: 14px;">
+									<b>Tần suất đi khám:</b> 1 lần/năm<br/>
+									<b>Đặc điểm:</b> Cẩn thận, quan tâm hồ sơ sức khỏe
+								</div>
+
+								<div class="pblock" style="border-top: 1px solid var(--line); padding-top: 10px;">
+									<div class="lab">Thói quen khám chữa bệnh</div>
+									<ul>
+										<li>Khám sức khỏe định kỳ hàng năm.</li>
+										<li>Lưu trữ kỹ kết quả khám & đơn thuốc trong túi hồ sơ.</li>
+										<li>Thường chụp ảnh lưu lại giấy tờ để dự phòng.</li>
+									</ul>
+								</div>
+
+								<div class="pblock">
+									<div class="lab" style="color: #b23a3a;">Pain points (Nỗi đau)</div>
+									<ul>
+										<li>Hồ sơ giấy và đơn thuốc rất dễ bị rách hoặc thất lạc.</li>
+										<li>Không nhớ rõ kết quả khám và chỉ số của những lần trước.</li>
+										<li>Mỗi lần chuyển/đổi viện là phải mang theo rất nhiều giấy tờ.</li>
+									</ul>
+								</div>
+
+								<div class="pblock">
+									<div class="lab" style="color: var(--teal);">Kỳ vọng với TRUEMED</div>
+									<p style="font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 8px;">
+										Một nơi lưu trữ tập trung toàn bộ bệnh án, kết quả xét nghiệm và đơn thuốc để xem lại bất cứ lúc nào.
+									</p>
+								</div>
+
+								<div class="quote">
+									"Nếu chỉ cần mở điện thoại là xem được toàn bộ hồ sơ bệnh án thì sẽ tiết kiệm được rất nhiều thời gian."
+								</div>
+							</div>
+						</div>
+
+						<!-- Person 3 -->
+						<div class="person">
+							<div class="avatar" style="width: 100%; height: 210px; overflow: hidden; background: #e8f1f9;">
+								<img src="/thai.png" alt="Vũ Thư Thái" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+							</div>
+							<div class="body">
+								<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+									<h3 style="font-size: 19px; color: var(--navy);">Vũ Thư Thái</h3>
+									<span style="font-size: 12px; background: var(--mint-soft); color: var(--mint-deep); font-weight: 700; padding: 2px 10px; border-radius: 20px;">STT 05</span>
+								</div>
+								<div class="role" style="margin-bottom: 8px;">27 tuổi · Chuyên viên Marketing</div>
+								<div style="font-size: 12.5px; color: var(--muted); margin-bottom: 14px;">
+									<b>Tần suất đi khám:</b> Không cố định<br/>
+									<b>Đặc điểm:</b> Người dùng công nghệ, ưa trải nghiệm số
+								</div>
+
+								<div class="pblock" style="border-top: 1px solid var(--line); padding-top: 10px;">
+									<div class="lab">Thói quen khám chữa bệnh</div>
+									<ul>
+										<li>Thực hiện hầu hết các dịch vụ qua ứng dụng thông minh.</li>
+										<li>Thích thao tác nhanh, tối giản các bước thủ tục.</li>
+										<li>Ưu tiên thanh toán Online khi sử dụng dịch vụ.</li>
+									</ul>
+								</div>
+
+								<div class="pblock">
+									<div class="lab" style="color: #b23a3a;">Pain points (Nỗi đau)</div>
+									<ul>
+										<li>Quy trình đăng ký đặt lịch ở nhiều bệnh viện còn phức tạp.</li>
+										<li>Không biết rõ cần chuẩn bị những giấy tờ gì trước khi đi khám.</li>
+										<li>Phải gọi điện thoại nhiều lần để xác nhận lại lịch hẹn.</li>
+									</ul>
+								</div>
+
+								<div class="pblock">
+									<div class="lab" style="color: var(--teal);">Kỳ vọng với TRUEMED</div>
+									<p style="font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 8px;">
+										Ứng dụng đặt lịch chỉ trong vài phút, có hướng dẫn chuẩn bị trước khi khám và cho phép thanh toán trực tuyến.
+									</p>
+								</div>
+
+								<div class="quote">
+									"Tôi muốn mọi thứ đều làm được trên điện thoại, từ đặt lịch đến xem đơn thuốc."
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- SUB-SECTION: USER PERSONA -->
+					<div style="margin-top: 60px; padding-top: 40px; border-top: 1px dashed var(--line);">
+						<div class="sec-head" style="margin-bottom: 24px;">
+							<h2>User Persona</h2>
+						</div>
+
+						<div style="background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-md); display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: start;">
+							<!-- Avatar & Core Info -->
+							<div style="text-align: center;">
+								<div style="width: 100%; height: 280px; border-radius: 16px; overflow: hidden; background: #e8f1f9; margin-bottom: 16px; border: 1px solid var(--line);">
+									<img src="/an.png" alt="Mai Thùy An - User Persona" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block;" />
+								</div>
+								<h4 style="font-size: 22px; color: var(--navy); font-family: var(--font-heading);">Mai Thùy An</h4>
+								<div style="font-size: 13px; color: var(--mint-deep); font-weight: 600; margin: 4px 0 12px;">Nhân viên Văn phòng (30 tuổi)</div>
+								
+								<div style="background: var(--bg); padding: 12px 14px; border-radius: 12px; font-size: 12.5px; color: var(--muted); text-align: left; line-height: 1.6;">
+									<b>Tần suất khám:</b> Không cố định (1 lần/năm hoặc khi có vấn đề sức khỏe)<br/>
+									<b>Bối cảnh:</b> Lịch cố định (8h–17h), rất khó thu xếp đi khám trong giờ hành chính. Khám bệnh phải chờ cuối tuần hoặc xin nghỉ làm.
+								</div>
+							</div>
+
+							<!-- Detailed Details (Pain Points, Goals, Behaviors) -->
+							<div>
+								<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+									<!-- Pain points -->
+									<div style="background: #fdf2f2; border: 1px solid #f8d7da; border-radius: 14px; padding: 20px;">
+										<h4 style="font-size: 15px; color: #b23a3a; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+											<i class="fa-solid fa-face-frown"></i> Pain Points (Nỗi đau thực tế)
+										</h4>
+										<ul style="margin: 0; padding-left: 18px; font-size: 13px; color: var(--ink); line-height: 1.55;">
+											<li style="margin-bottom: 6px;"><b>Thời gian chờ thụ động lớn:</b> Luôn đi từ 4-5h sáng nhưng không biết chính xác khi nào đến lượt, gây mệt mỏi.</li>
+											<li style="margin-bottom: 6px;"><b>Quản lý bệnh án phức tạp:</b> Giấy xét nghiệm, đơn thuốc dễ rách/thất lạc giữa các lần khám.</li>
+											<li style="margin-bottom: 6px;"><b>Quy trình rườm rà:</b> Phải qua nhiều khâu trung gian lấy số, nhận phiếu gây lãng phí công sức.</li>
+											<li><b>Thiếu thông tin minh bạch:</b> Khó xác thực trình độ bác sĩ, trang thiết bị & chi phí, gây tâm lý bất an.</li>
+										</ul>
+									</div>
+
+									<!-- Goals -->
+									<div style="background: var(--mint-soft); border: 1px solid var(--line); border-radius: 14px; padding: 20px;">
+										<h4 style="font-size: 15px; color: var(--mint-deep); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+											<i class="fa-solid fa-bullseye"></i> Goals (Mục tiêu kỳ vọng)
+										</h4>
+										<ul style="margin: 0; padding-left: 18px; font-size: 13px; color: var(--ink); line-height: 1.55;">
+											<li style="margin-bottom: 6px;"><b>Tối ưu thời gian khám:</b> Biết chính xác giờ đến, không phải chờ đợi lâu hay đi từ sớm.</li>
+											<li style="margin-bottom: 6px;"><b>Hồ sơ sức khỏe số hóa:</b> Xem toàn bộ kết quả, đơn thuốc ở một ứng dụng duy nhất.</li>
+											<li><b>Minh bạch thông tin bác sĩ:</b> Cung cấp thông tin kinh nghiệm, chuyên khoa, giờ làm việc & chi phí khám minh bạch.</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Behaviors -->
+								<div style="background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 20px;">
+									<h4 style="font-size: 14px; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+										<i class="fa-solid fa-rotate"></i> Behaviors (Hành vi điển hình)
+									</h4>
+									<ul style="margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); line-height: 1.6;">
+										<li>Thường chụp ảnh đơn thuốc, sổ khám lưu lại trong thư viện ảnh điện thoại thay vì giữ sổ giấy.</li>
+										<li>Khi thấy triệu chứng bất thường, thường lên Google/Facebook tra cứu hoặc hỏi bạn bè: <i>"Khám ở đâu uy tín?", "Bác sĩ nào mát tay?"</i>.</li>
+									</ul>
+								</div>
+
+								<!-- Quote -->
+								<div style="font-family: var(--font-serif); font-style: italic; color: var(--navy); font-size: 15.5px; padding: 16px 20px; background: linear-gradient(135deg, var(--mint-soft), var(--sun-soft)); border-left: 4px solid var(--mint-deep); border-radius: 0 12px 12px 0;">
+									“Tôi không chỉ mong muốn đặt lịch khám trực tuyến mà còn cần một hệ thống giúp quản lý toàn bộ quá trình khám chữa bệnh.”
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 5. BPMN AS-IS -->
+			<section class="block" id="bpmn-asis">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>BPMN As-Is</h2>
+					</div>
+
+					<div class="bpmn-box" style="margin-bottom: 32px; padding: 24px; text-align: center; overflow-x: auto; margin-top: 24px;">
+						<div style="margin-bottom: 14px; text-align: left; font-size: 13.5px; color: var(--navy); font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+							<span>Sơ đồ luồng quy trình BPMN As-Is (Thực trạng)</span>
+							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-arrows-left-right"></i> Cuộn ngang để xem sơ đồ phóng to</span>
+						</div>
+						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; min-width: 1100px;">
+							<img src="/bpmn-asis.svg" alt="Sơ đồ BPMN As-Is Thực trạng Khám chữa bệnh" style="width: 100%; min-width: 1100px; height: auto; display: block;" />
+						</div>
+					</div>
+						<div class="workflow-steps">
+							<div class="workflow-step warn">
+								<div class="step-num">1</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Đến bệnh viện sớm & Xếp hàng lấy số thủ công</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Bệnh nhân phải có mặt từ 5h-6h sáng, xếp hàng chờ đợi tại cây lấy số tự động hoặc quầy tiếp đón.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step warn">
+								<div class="step-num">2</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Chờ đợi tại phòng khám & Nộp sổ y tế giấy</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Thời gian chờ trung bình 1.5 - 3 tiếng. Sổ y tế giấy dễ bị rách, mất trang hoặc ghi chép chữ bác sĩ khó đọc.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step warn">
+								<div class="step-num">3</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Thực hiện cận lâm sàng & Thanh toán nhiều lần</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Di chuyển qua lại nhiều tầng để nộp tiền xét nghiệm, chụp X-quang và quay lại chờ kết quả.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step warn">
+								<div class="step-num">4</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Nhận đơn thuốc giấy & Tự ghi nhớ lịch tái khám</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Không có công cụ nhắc nhở, bệnh nhân thường xuyên bỏ dở liệu trình hoặc tái khám quá hạn.</p>
+								</div>
+							</div>
+						</div>
+				</div>
+			</section>
+
+			<!-- 6. PROBLEM STATEMENT & PROBLEM-SOLUTION FIT -->
+			<section class="block alt" id="problem">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>Problem Statement & Problem-Solution Fit</h2>
+					</div>
+
+					<!-- Table 1: Problem Statement -->
+					<div style="margin-bottom: 40px; margin-top: 24px;">
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading);">1. Problem Statement (Phát biểu vấn đề)</h3>
+						<div class="tablecard">
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 25%;">Những vấn đề cốt lõi</th>
+										<th style="width: 50%;">Mô tả chi tiết</th>
+										<th style="width: 25%;">Tính năng giải quyết</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b style="color: #b23a3a;">Quy trình đặt lịch khám thiếu chủ động</b></td>
+										<td>Người bệnh chưa thể chủ động lựa chọn bác sĩ, khung giờ phù hợp và biết chính xác thời gian được khám. Điều này dẫn đến thời gian chờ đợi kéo dài và ảnh hưởng đến lịch trình cá nhân.</td>
+										<td><span style="background: var(--mint-soft); color: var(--mint-deep); font-weight: 600; padding: 4px 10px; border-radius: 6px; font-size: 13px; display: inline-block;">Đăng ký khám, Chọn bác sĩ, Chọn khung giờ, Đặt lịch</span></td>
+									</tr>
+									<tr>
+										<td><b style="color: #b23a3a;">Thông tin khám chữa bệnh chưa quản lý tập trung</b></td>
+										<td>Bệnh án và đơn thuốc được lưu trữ rời rạc, khiến người bệnh khó theo dõi lịch sử điều trị và cung cấp thông tin đầy đủ cho bác sĩ trong các lần khám sau.</td>
+										<td><span style="background: var(--mint-soft); color: var(--mint-deep); font-weight: 600; padding: 4px 10px; border-radius: 6px; font-size: 13px; display: inline-block;">Quản lý bệnh án, Quản lý đơn thuốc</span></td>
+									</tr>
+									<tr>
+										<td><b style="color: #b23a3a;">Thiếu hỗ trợ sau khám</b></td>
+										<td>Người bệnh phải tự ghi nhớ lịch tái khám và quản lý thông tin điều trị. Việc thiếu cơ chế nhắc nhở và theo dõi làm tăng nguy cơ bỏ lỡ lịch hẹn hoặc không tuân thủ đúng phác đồ điều trị.</td>
+										<td><span style="background: var(--mint-soft); color: var(--mint-deep); font-weight: 600; padding: 4px 10px; border-radius: 6px; font-size: 13px; display: inline-block;">Nhắc tái khám</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Table 2: Problem-Solution Fit -->
+					<div>
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 12px; font-family: var(--font-heading);">2. Problem-Solution Fit (Khái quát & Chi tiết giải pháp)</h3>
+						
+						<!-- Overview Callout Box -->
+						<div class="mkt-callout" style="background: var(--mint-soft); border-left-color: var(--mint-deep); margin-bottom: 20px;">
+							<p style="color: var(--navy); font-weight: 500;">
+								💡 <b>Đề xuất khái quát:</b> Đề xuất xây dựng một ứng dụng quản lý hành trình khám bệnh giúp người bệnh chủ động thực hiện toàn bộ quá trình từ đăng ký khám, tìm kiếm bác sĩ, lựa chọn khung giờ đến theo dõi sau khám trên một nền tảng duy nhất. Ứng dụng giúp rút ngắn thời gian chờ thông qua đặt lịch trước, cung cấp thông tin minh bạch về bác sĩ và chi phí khám, đồng thời lưu trữ tập trung bệnh án, kết quả khám và đơn thuốc điện tử. Ngoài ra, hệ thống hỗ trợ nhắc lịch tái khám nhằm đảm bảo quá trình điều trị được theo dõi liên tục và thuận tiện hơn.
+							</p>
+						</div>
+
+						<div class="tablecard">
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 6%; text-align: center;">STT</th>
+										<th style="width: 28%;">Pain Point (Nỗi đau người bệnh)</th>
+										<th style="width: 44%;">Giải pháp TRUEMED</th>
+										<th style="width: 22%;">Tính năng tương ứng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--sun);">1</td>
+										<td><b>Thời gian chờ đợi thụ động quá lớn:</b> Người bệnh phải đến từ rất sớm (4–5h sáng) nhưng vẫn không biết chính xác khi nào đến lượt khám, gây lãng phí thời gian và ảnh hưởng đến công việc.</td>
+										<td>Cho phép người bệnh đặt lịch khám trước, lựa chọn khung giờ phù hợp và theo dõi thông tin lịch hẹn trên ứng dụng để chủ động sắp xếp thời gian và giảm thời gian chờ tại bệnh viện.</td>
+										<td><span style="background: #e8f1f9; color: var(--mint-deep); font-weight: 600; padding: 4px 8px; border-radius: 6px; font-size: 12.5px; display: inline-block;">Đăng ký khám, Chọn khung giờ, Đặt lịch</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--sun);">2</td>
+										<td><b>Quản lý lịch sử khám chữa bệnh phức tạp:</b> Giấy xét nghiệm, đơn thuốc và hồ sơ khám dễ bị thất lạc giữa các lần khám.</td>
+										<td>Cung cấp hồ sơ sức khỏe điện tử, lưu trữ tập trung bệnh án, kết quả khám và đơn thuốc theo từng bệnh nhân để dễ dàng tra cứu và theo dõi lịch sử điều trị.</td>
+										<td><span style="background: #e8f1f9; color: var(--mint-deep); font-weight: 600; padding: 4px 8px; border-radius: 6px; font-size: 12.5px; display: inline-block;">Quản lý bệnh án, Quản lý đơn thuốc</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--sun);">3</td>
+										<td><b>Quy trình đăng ký khám rườm rà, thiếu tự động hóa:</b> Người bệnh phải trải qua nhiều bước như lấy số thứ tự, nhận phiếu khám và chờ xác nhận, làm kéo dài thời gian khám.</td>
+										<td>Cho phép đăng ký khám trực tuyến, điền thông tin trước khi đến bệnh viện và hoàn tất các bước đăng ký trên ứng dụng nhằm giảm thao tác thủ công và rút ngắn quy trình tiếp nhận.</td>
+										<td><span style="background: #e8f1f9; color: var(--mint-deep); font-weight: 600; padding: 4px 8px; border-radius: 6px; font-size: 12.5px; display: inline-block;">Đăng ký khám trực tuyến, Đặt lịch</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--sun);">4</td>
+										<td><b>Thiếu thông tin minh bạch:</b> Thiếu một kênh thông tin minh bạch, tập trung để xác thực trình độ bác sĩ, trang thiết bị và chi phí khám, khiến người bệnh khó lựa chọn cơ sở y tế phù hợp.</td>
+										<td>Cung cấp thông tin tập trung về bác sĩ, chuyên khoa, kinh nghiệm, lịch khám, chi phí và các thông tin liên quan để người bệnh có đầy đủ cơ sở lựa chọn trước khi đặt lịch.</td>
+										<td><span style="background: #e8f1f9; color: var(--mint-deep); font-weight: 600; padding: 4px 8px; border-radius: 6px; font-size: 12.5px; display: inline-block;">Chọn bác sĩ, Hiển thị thông tin bác sĩ, chuyên khoa và chi phí</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 7. USE CASE -->
+			<section class="block" id="usecase">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>Use Case</h2>
+					</div>
+
+					<!-- Use Case Diagram Image -->
+					<div class="bpmn-box" style="margin-bottom: 40px; padding: 24px; text-align: center; overflow-x: auto; margin-top: 24px;">
+						<div style="margin-bottom: 14px; text-align: left; font-size: 13.5px; color: var(--navy); font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+							<span>Sơ đồ Use Case Diagram — Tổng quan Hệ thống TRUEMED</span>
+							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-arrows-left-right"></i> Cuộn ngang để xem sơ đồ phóng to</span>
+						</div>
+						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; min-width: 900px;">
+							<img src="/use-case-dia.png" alt="Use Case Diagram TRUEMED" style="width: 100%; min-width: 900px; height: auto; display: block;" />
+						</div>
+					</div>
+
+					<!-- Use Cases Detailed Table -->
+					<div style="margin-top: 32px;">
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading);">Danh sách Bảng mô tả chi tiết các Use Case (UC01 - UC12)</h3>
+						
+						<div class="tablecard" style="overflow-x: auto;">
+							<table style="min-width: 1000px;">
+								<thead>
+									<tr>
+										<th style="width: 6%; text-align: center;">ID</th>
+										<th style="width: 14%;">Use Case</th>
+										<th style="width: 12%;">Actor chính</th>
+										<th style="width: 10%;">Actor phụ</th>
+										<th style="width: 20%;">Mô tả</th>
+										<th style="width: 14%;">Tiền / Hậu điều kiện</th>
+										<th style="width: 24%;">Luồng thực hiện (Chính / Phụ)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC01</td>
+										<td><b>Đăng nhập</b></td>
+										<td>Bệnh nhân, Bác sĩ, Lễ tân</td>
+										<td>System</td>
+										<td>Cho phép người dùng xác thực để sử dụng hệ thống.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Có tài khoản hợp lệ<br/><b>Hậu:</b> Đăng nhập thành công, chuyển trang chủ theo quyền</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Nhập TK & MK → 2. Hệ thống kiểm tra → 3. Xác thực thành công → 4. Chuyển màn hình chính.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Sai tài khoản/mật khẩu; Tài khoản bị khóa.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC02</td>
+										<td><b>Đăng ký tài khoản</b></td>
+										<td>Bệnh nhân</td>
+										<td>System</td>
+										<td>Cho phép bệnh nhân tạo tài khoản mới.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Chưa có tài khoản<br/><b>Hậu:</b> Tài khoản mới được tạo</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Nhập thông tin cá nhân → 2. Nhập SĐT/Email → 3. Xác thực OTP → 4. Thiết lập mật khẩu → 5. Tạo tài khoản.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> SĐT đã tồn tại; OTP sai/hết hạn.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC03</td>
+										<td><b>Đặt lịch khám</b></td>
+										<td>Bệnh nhân</td>
+										<td>System</td>
+										<td>Xác nhận đặt lịch khám bệnh.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Chọn bác sĩ & khung giờ<br/><b>Hậu:</b> Lịch khám được tạo thành công</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Chọn BV & Chuyên khoa & Bác sĩ & Khung giờ → 2. Xác nhận → 3. Tạo lịch → 4. Sinh mã lịch hẹn → 5. Gửi thông báo.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Slot bị người khác đặt; Lỗi hệ thống.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC04</td>
+										<td><b>Hủy lịch khám</b></td>
+										<td>Bệnh nhân, Lễ tân</td>
+										<td>System</td>
+										<td>Cho phép hủy lịch khám đã đặt trước đó.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Có lịch khám hợp lệ<br/><b>Hậu:</b> Lịch chuyển sang trạng thái Đã hủy</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Chọn lịch → 2. Nhấn Hủy → 3. Xác nhận → 4. Cập nhật trạng thái.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Quá thời gian cho phép hủy; Lịch đã hoàn thành.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC05</td>
+										<td><b>Xem lịch khám</b></td>
+										<td>Bệnh nhân, Bác sĩ, Lễ tân</td>
+										<td>System</td>
+										<td>Hiển thị danh sách lịch khám theo phân quyền người dùng.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Đăng nhập thành công<br/><b>Hậu:</b> Danh sách lịch khám hiển thị</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Chọn chức năng → 2. Tải lịch khám → 3. Hiển thị trạng thái, thời gian, bác sĩ, bệnh nhân.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Không có lịch khám.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC06</td>
+										<td><b>Quản lý bệnh án</b></td>
+										<td>Bác sĩ</td>
+										<td>Bệnh nhân, System</td>
+										<td>Bác sĩ cập nhật và bệnh nhân tra cứu bệnh án điện tử.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Có lịch khám<br/><b>Hậu:</b> Bệnh án được lưu/cập nhật (Extend UC08)</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Mở hồ sơ bệnh nhân → 2. Nhập chẩn đoán → 3. Nhập kết quả khám → 4. Lưu bệnh án → 5. Bệnh nhân xem bệnh án.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Không lưu được dữ liệu.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC07</td>
+										<td><b>Quản lý đơn thuốc</b></td>
+										<td>Bác sĩ</td>
+										<td>Bệnh nhân, System</td>
+										<td>Bác sĩ kê đơn và bệnh nhân xem đơn thuốc điện tử.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Có bệnh án (Include UC06)<br/><b>Hậu:</b> Đơn thuốc điện tử được lưu</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Chọn bệnh nhân → 2. Nhập thuốc & liều dùng → 3. Lưu đơn thuốc → 4. Bệnh nhân xem đơn thuốc.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Thuốc không tồn tại; Lỗi lưu dữ liệu.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC08</td>
+										<td><b>Chỉ định tái khám</b></td>
+										<td>Bác sĩ</td>
+										<td>System</td>
+										<td>Thiết lập lịch tái khám tự động cho bệnh nhân.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Hoàn tất khám, có bệnh án<br/><b>Hậu:</b> Lịch tái khám được khởi tạo</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Nhập ngày tái khám → 2. Nhập ghi chú → 3. Lưu thông tin → 4. Tạo lịch nhắc tự động.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Không nhập ngày tái khám.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC09</td>
+										<td><b>Checkin bệnh nhân</b></td>
+										<td>Lễ tân</td>
+										<td>System</td>
+										<td>Xác nhận bệnh nhân đến khám & hoàn tất tiếp nhận.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Có lịch khám / đăng ký trực tiếp<br/><b>Hậu:</b> Bệnh nhân được tiếp nhận vào phòng</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Tìm lịch khám → 2. Kiểm tra thông tin → 3. Xác nhận đến khám → 4. In phiếu khám (nếu cần).<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Không tìm thấy lịch; Thiếu giấy tờ.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC10</td>
+										<td><b>Quản lý lịch khám</b></td>
+										<td>Lễ tân</td>
+										<td>System</td>
+										<td>Quản lý điều phối lịch khám của bệnh viện.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Đăng nhập quyền Lễ tân<br/><b>Hậu:</b> Lịch khám toàn viện được cập nhật</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Xem lịch khám → 2. Cập nhật trạng thái → 3. Điều chỉnh lịch khi cần.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Trùng lịch; Không còn khung giờ.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC11</td>
+										<td><b>Quản lý tài khoản</b></td>
+										<td>Lễ tân / Admin</td>
+										<td>System</td>
+										<td>Quản lý phân quyền & thông tin tài khoản người dùng.</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Admin / Quản trị viên đăng nhập<br/><b>Hậu:</b> Tài khoản được cập nhật</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Xem danh sách tài khoản → 2. Thêm/Sửa/Xóa → 3. Phân quyền → 4. Khóa/Mở khóa → 5. Reset mật khẩu.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Tài khoản đang sử dụng; Không đủ quyền.</span></td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 700; color: var(--mint-deep);">UC12</td>
+										<td><b>Cập nhật trạng thái</b></td>
+										<td>Lễ tân</td>
+										<td>System</td>
+										<td>Cập nhật trạng thái của bệnh nhân trong tiến trình khám (Include UC09).</td>
+										<td><span style="font-size: 12px; color: var(--muted);"><b>Tiền:</b> Bệnh nhân có lịch khám trong ngày<br/><b>Hậu:</b> Trạng thái mới hiển thị cho các bên</span></td>
+										<td style="font-size: 12.5px;"><b>Chính:</b> 1. Mở danh sách bệnh nhân → 2. Chọn bệnh nhân → 3. Chọn trạng thái mới → 4. Kiểm tra hợp lệ → 5. Lưu & cập nhật danh sách.<br/><span style="color: #b23a3a;"><b>Thay thế:</b> Không tìm thấy bệnh nhân; Lỗi chuyển trạng thái.</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 8. BPMN TO-BE -->
+			<section class="block alt" id="bpmn-tobe">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>BPMN To-Be — Quy trình Tối ưu cùng TRUEMED</h2>
+					</div>
+					<p class="sec-desc">
+						Chuyển đổi số toàn diện cắt giảm 80% thời gian chờ đợi, mang lại trải nghiệm y tế mượt mà.
+					</p>
+
+					<div class="bpmn-box">
+						<div class="workflow-steps">
+							<div class="workflow-step">
+								<div class="step-num">1</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Đặt lịch hẹn online & Chọn khung giờ mong muốn</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Thực hiện thao tác trong 1 phút trên App TrueMed. Nhận vé khám điện tử tích hợp mã QR.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step">
+								<div class="step-num">2</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Quét QR Check-in & Vào thẳng phòng khám</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Đến viện đúng khung giờ, quét mã tại cây Kiosk tự động để chuyển thẳng vào danh sách chờ khám của bác sĩ.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step">
+								<div class="step-num">3</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Bác sĩ truy cập Hồ sơ bệnh án điện tử</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Bác sĩ xem toàn bộ lịch sử bệnh lý trên hệ thống TrueMed Portal để đưa ra chẩn đoán chính xác nhanh chóng.</p>
+								</div>
+							</div>
+
+							<div class="workflow-step">
+								<div class="step-num">4</div>
+								<div>
+									<h4 style="color: var(--navy); font-size: 17px; margin-bottom: 4px;">Kê đơn thuốc điện tử & Kích hoạt nhắc lịch tự động</h4>
+									<p style="color: var(--muted); font-size: 14px; margin: 0;">Đơn thuốc được đẩy thẳng về ứng dụng bệnh nhân. Tính năng Smart Alarm tự động lên lịch nhắc uống thuốc.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 9. UI MOCKUP SHOWCASE -->
+			<section class="block" id="mockup">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>Giao diện Ứng dụng TRUEMED</h2>
+					</div>
+					<p class="sec-desc">
+						Thiết kế hiện đại, tối giản và thân thiện với mọi lứa tuổi người dùng.
+					</p>
+
+					<div class="mockup-grid">
+						<div class="mockup-frame">
+							<div class="mockup-phone">
+								<i class="fa-solid fa-house-medical" style="font-size: 2.8rem; color: var(--mint-deep); margin-bottom: 12px;"></i>
+								<div style="font-weight: 700; color: var(--navy);">Trang chủ & Đặt khám</div>
+								<div style="font-size: 12px; color: var(--muted); margin-top: 6px;">Tìm bác sĩ, chọn chuyên khoa & khung giờ hẹn</div>
+							</div>
+							<h4 style="color: var(--navy);">1. Màn hình Đặt khám</h4>
+						</div>
+
+						<div class="mockup-frame">
+							<div class="mockup-phone">
+								<i class="fa-solid fa-notes-medical" style="font-size: 2.8rem; color: var(--mint-deep); margin-bottom: 12px;"></i>
+								<div style="font-weight: 700; color: var(--navy);">Hồ sơ sức khỏe</div>
+								<div style="font-size: 12px; color: var(--muted); margin-top: 6px;">Lưu trữ đơn thuốc, kết quả xét nghiệm, chỉ số</div>
+							</div>
+							<h4 style="color: var(--navy);">2. Màn hình Hồ sơ y tế</h4>
+						</div>
+
+						<div class="mockup-frame">
+							<div class="mockup-phone">
+								<i class="fa-solid fa-bell" style="font-size: 2.8rem; color: var(--mint-deep); margin-bottom: 12px;"></i>
+								<div style="font-weight: 700; color: var(--navy);">Nhắc thuốc & Tái khám</div>
+								<div style="font-size: 12px; color: var(--muted); margin-top: 6px;">Thông báo thông minh theo giờ sinh hoạt</div>
+							</div>
+							<h4 style="color: var(--navy);">3. Màn hình Nhắc nhở</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 10. ERD DIAGRAM -->
+			<section class="block alt" id="erd">
+				<div class="wrap">
+					<div class="sec-head">
+						<h2>Entity Relationship Diagram (ERD)</h2>
+					</div>
+					<p class="sec-desc">
+						Mô hình cơ sở dữ liệu quan hệ đảm bảo an toàn và tính toàn vẹn dữ liệu y tế.
+					</p>
+
+					<div class="erd-grid">
+						<div class="erd-card">
+							<div class="erd-head">
+								<span>PATIENTS (Bệnh nhân)</span>
+								<i class="fa-solid fa-database"></i>
+							</div>
+							<ul class="erd-list">
+								<li><span class="pk">PK patient_id</span> <span>UUID</span></li>
+								<li><span>full_name</span> <span>VARCHAR</span></li>
+								<li><span>phone_number</span> <span>VARCHAR</span></li>
+								<li><span>date_of_birth</span> <span>DATE</span></li>
+								<li><span>medical_code</span> <span>VARCHAR</span></li>
+							</ul>
+						</div>
+
+						<div class="erd-card">
+							<div class="erd-head">
+								<span>DOCTORS (Bác sĩ)</span>
+								<i class="fa-solid fa-database"></i>
+							</div>
+							<ul class="erd-list">
+								<li><span class="pk">PK doctor_id</span> <span>UUID</span></li>
+								<li><span>doctor_name</span> <span>VARCHAR</span></li>
+								<li><span>specialty</span> <span>VARCHAR</span></li>
+								<li><span>hospital_name</span> <span>VARCHAR</span></li>
+								<li><span>experience_years</span> <span>INT</span></li>
+							</ul>
+						</div>
+
+						<div class="erd-card">
+							<div class="erd-head">
+								<span>APPOINTMENTS (Lịch hẹn)</span>
+								<i class="fa-solid fa-database"></i>
+							</div>
+							<ul class="erd-list">
+								<li><span class="pk">PK appointment_id</span> <span>UUID</span></li>
+								<li><span class="fk">FK patient_id</span> <span>UUID</span></li>
+								<li><span class="fk">FK doctor_id</span> <span>UUID</span></li>
+								<li><span>slot_time</span> <span>DATETIME</span></li>
+								<li><span>status</span> <span>ENUM</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- 11. CTA FOOTER -->
+		<footer id="contact">
+			<div class="wrap">
+				<h2>Chủ động bảo vệ sức khỏe cùng TRUEMED</h2>
+				<p>
+					Tải ứng dụng ngay hôm nay để trải nghiệm quy trình khám chữa bệnh thông minh, hiện đại và tiết kiệm thời gian.
+				</p>
+
+				<div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+					<a href="#" class="btn btn-primary">
+						<i class="fa-brands fa-apple" style="font-size: 18px;"></i> App Store
+					</a>
+					<a href="#" class="btn btn-outline" style="background:#fff;">
+						<i class="fa-brands fa-google-play" style="font-size: 18px;"></i> Google Play
+					</a>
+				</div>
+
+				<div class="footer-bottom">
+					© 2026 TRUEMED Health Technology. All rights reserved. Designed for Healthcare Excellence.
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
