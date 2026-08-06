@@ -513,6 +513,24 @@ tbody tr:hover {
   background: #eef5fc;
 }
 
+td.gap-y, td.gap-p, td.gap-n {
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+td.gap-y {
+  color: #16a34a; /* Xanh lá cây cho Hỗ trợ tốt ✓ */
+}
+
+td.gap-p {
+  color: #d97706; /* Vàng cho Hỗ trợ một phần Δ */
+}
+
+td.gap-n {
+  color: #dc2626; /* Đỏ cho Không hỗ trợ ×/✗ */
+}
+
 /* ================= PERSONAS & INTERVIEWS ================= */
 .people {
   display: grid;
