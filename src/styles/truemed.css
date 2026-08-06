@@ -8,10 +8,11 @@
 
 :root {
   /* Color Palette — Royal Blue Theme */
+  /* Color Palette — Royal Blue & Deep Navy Theme */
   --bg: #f4f7fa;
-  --ink: #0d233a;
-  --muted: #4a607a;
-  --line: #d2dfec;
+  --ink: #08192b;
+  --muted: #2d4560;
+  --line: #c8d9ea;
   
   /* Royal Blue Primary Accents */
   --mint: #1976d2;
@@ -581,7 +582,8 @@ tbody tr:hover {
 
 .pblock li {
   font-size: 13.5px;
-  color: var(--muted);
+  color: var(--ink);
+  font-weight: 450;
   margin-bottom: 4px;
 }
 
