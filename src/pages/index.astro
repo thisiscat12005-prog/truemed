@@ -40,11 +40,41 @@ import '../styles/truemed.css';
 
 		<main>
 			<!-- 2. HERO SECTION -->
-			<section class="hero" id="hero" style="padding-top: 64px; padding-bottom: 0;">
+			<section class="hero" id="hero" style="padding-top: 64px; padding-bottom: 0; overflow: hidden;">
 				<div class="wrap" style="max-width: 100%; padding: 0;">
-					<img src="/anh-nen.png" alt="TRUEMED - Quản lý toàn bộ quá trình khám chữa bệnh" style="width: 100%; height: auto; display: block; border-radius: 0;" />
+					<img src="/anh-nen.png" alt="TRUEMED - Quản lý toàn bộ quá trình khám chữa bệnh" class="hero-animated-img" style="width: 100%; height: auto; display: block; border-radius: 0;" />
 				</div>
 			</section>
+
+			<style>
+				.hero-animated-img {
+					animation: heroEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards, heroFloat 6s ease-in-out 1.2s infinite alternate;
+					transform-origin: center center;
+					will-change: transform, opacity;
+				}
+
+				@keyframes heroEntrance {
+					0% {
+						opacity: 0;
+						transform: scale(0.95) translateY(24px);
+						filter: blur(8px);
+					}
+					100% {
+						opacity: 1;
+						transform: scale(1) translateY(0);
+						filter: blur(0);
+					}
+				}
+
+				@keyframes heroFloat {
+					0% {
+						transform: translateY(0);
+					}
+					100% {
+						transform: translateY(-8px);
+					}
+				}
+			</style>
 
 			<!-- MARQUEE STRIP -->
 			<div class="strip">
