@@ -453,12 +453,16 @@ import '../styles/truemed.css';
 							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-download"></i> Nhấn vào ảnh để tải xuống &nbsp;|&nbsp; <i class="fa-solid fa-arrows-left-right"></i> Cuộn ngang</span>
 						</div>
 						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 12px; min-width: 1100px;">
-							<img
-    src="/bpmn-asis2.svg"
-    alt="Sơ đồ BPMN As-Is"
-    class="zoomable-image"
-    onclick="openImage(this.src)"
-/>
+							<div class="bpmn-preview">
+
+    <img
+        src="/bpmn-asis2.svg"
+        alt="Sơ đồ BPMN As-Is"
+        class="zoomable-image"
+        onclick="openImage(this.src)"
+    />
+
+</div>
 						</div>
 					</div>
 						<div class="workflow-steps">
@@ -972,6 +976,123 @@ document.addEventListener("keydown",function(e){
     if(e.key==="Escape"){
 
         closeImage();
+
+    }
+
+});
+
+</script>
+<!-- IMAGE MODAL -->
+
+<div id="imageModal" class="image-modal">
+
+    <div class="toolbar">
+
+        <button onclick="zoomOut()">−</button>
+
+        <button onclick="resetZoom()">100%</button>
+
+        <button onclick="zoomIn()">+</button>
+
+        <button onclick="closeImage()">✕</button>
+
+    </div>
+
+    <div class="image-wrapper">
+
+        <img
+            id="modalImage"
+            class="modal-image"
+        >
+
+    </div>
+
+</div>
+<script is:inline>
+
+let zoom=1;
+
+function openImage(src){
+
+    zoom=1;
+
+    const modal=document.getElementById("imageModal");
+
+    const img=document.getElementById("modalImage");
+
+    img.src=src;
+
+    img.style.transform="scale(1)";
+
+    modal.style.display="block";
+
+}
+
+function closeImage(){
+
+    document.getElementById("imageModal").style.display="none";
+
+}
+
+function zoomIn(){
+
+    zoom+=0.2;
+
+    updateZoom();
+
+}
+
+function zoomOut(){
+
+    zoom=Math.max(.2,zoom-.2);
+
+    updateZoom();
+
+}
+
+function resetZoom(){
+
+    zoom=1;
+
+    updateZoom();
+
+}
+
+function updateZoom(){
+
+    document.getElementById("modalImage").style.transform="scale("+zoom+")";
+
+}
+
+window.openImage=openImage;
+window.closeImage=closeImage;
+window.zoomIn=zoomIn;
+window.zoomOut=zoomOut;
+window.resetZoom=resetZoom;
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        closeImage();
+
+    }
+
+});
+
+document.getElementById("imageModal").addEventListener("wheel",function(e){
+
+    e.preventDefault();
+
+    if(e.deltaY<0){
+
+        zoomIn();
+
+    }
+
+    else{
+
+        zoomOut();
 
     }
 
