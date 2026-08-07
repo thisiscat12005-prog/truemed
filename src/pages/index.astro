@@ -934,25 +934,28 @@ import '../styles/truemed.css';
     <img id="modalImage" class="modal-image">
 
 </div>
-<script>
+<script is:inline>
 
 function openImage(src){
 
-    const modal=document.getElementById("imageModal");
+    const modal = document.getElementById("imageModal");
 
-    const image=document.getElementById("modalImage");
+    const image = document.getElementById("modalImage");
 
-    image.src=src;
+    image.src = src;
 
-    modal.style.display="flex";
+    modal.style.display = "flex";
 
 }
 
 function closeImage(){
 
-    document.getElementById("imageModal").style.display="none";
+    document.getElementById("imageModal").style.display = "none";
 
 }
+
+window.openImage = openImage;
+window.closeImage = closeImage;
 
 document.getElementById("imageModal").addEventListener("click",function(e){
 
