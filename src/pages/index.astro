@@ -453,9 +453,12 @@ import '../styles/truemed.css';
 							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-download"></i> Nhấn vào ảnh để tải xuống &nbsp;|&nbsp; <i class="fa-solid fa-arrows-left-right"></i> Cuộn ngang</span>
 						</div>
 						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 12px; min-width: 1100px;">
-							<a href="/bpmn-asis2.svg" download="bpmn-asis2.svg" title="Nhấn vào đây để tải xuống sơ đồ BPMN As-Is" style="display: block; cursor: pointer;">
-								<img src="/bpmn-asis2.svg" alt="Sơ đồ BPMN As-Is Thực trạng Khám chữa bệnh (Click để tải xuống)" style="width: 100%; min-width: 1100px; height: auto; display: block;" />
-							</a>
+							<img
+    src="/bpmn-asis2.svg"
+    alt="Sơ đồ BPMN As-Is"
+    class="zoomable-image"
+    onclick="openImage(this.src)"
+/>
 						</div>
 					</div>
 						<div class="workflow-steps">
@@ -921,5 +924,56 @@ import '../styles/truemed.css';
 				</div>
 			</div>
 		</footer>
+<!-- Image Preview Modal -->
+<div id="imageModal" class="image-modal">
+
+    <span class="close-btn" onclick="closeImage()">
+        &times;
+    </span>
+
+    <img id="modalImage" class="modal-image">
+
+</div>
+<script>
+
+function openImage(src){
+
+    const modal=document.getElementById("imageModal");
+
+    const image=document.getElementById("modalImage");
+
+    image.src=src;
+
+    modal.style.display="flex";
+
+}
+
+function closeImage(){
+
+    document.getElementById("imageModal").style.display="none";
+
+}
+
+document.getElementById("imageModal").addEventListener("click",function(e){
+
+    if(e.target===this){
+
+        closeImage();
+
+    }
+
+});
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        closeImage();
+
+    }
+
+});
+
+</script>
 	</body>
 </html>
