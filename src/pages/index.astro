@@ -670,13 +670,15 @@ import '../styles/truemed.css';
 					</div>
 
 					<!-- Use Case Diagram Image -->
-					<div class="bpmn-box" style="margin-bottom: 40px; padding: 24px; text-align: center; overflow-x: auto; margin-top: 24px;">
-						<div style="margin-bottom: 14px; text-align: left; font-size: 13.5px; color: var(--navy); font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+					<div class="bpmn-box" style="margin-bottom: 40px; padding: 24px; text-align: center; margin-top: 24px; max-width: 900px; margin-left: auto; margin-right: auto;">
+						<div style="margin-bottom: 14px; text-align: left; font-size: 13.5px; color: var(--navy); font-weight: 600; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
 							<span>Sơ đồ Use Case Diagram — Tổng quan Hệ thống TRUEMED</span>
-							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-arrows-left-right"></i> Cuộn ngang để xem sơ đồ phóng to</span>
+							<span style="font-size: 12px; color: var(--mint-deep); font-weight: 600; background: var(--mint-soft); padding: 4px 12px; border-radius: 20px;"><i class="fa-solid fa-magnifying-glass-plus"></i> Nhấn vào ảnh để phóng to</span>
 						</div>
-						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; min-width: 900px;">
-							<img src="/UCD.png" alt="Use Case Diagram TRUEMED" style="width: 100%; min-width: 900px; height: auto; display: block;" />
+						<div style="background: #ffffff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: inline-block; width: 100%; box-shadow: var(--shadow-sm);">
+							<a href="/UCD.png" target="_blank" rel="noopener noreferrer" title="Nhấn vào đây để xem sơ đồ đầy đủ" style="display: block; cursor: pointer;">
+								<img src="/UCD.png" alt="Use Case Diagram TRUEMED" style="width: 100%; max-width: 780px; height: auto; display: block; margin: 0 auto; border-radius: 8px;" />
+							</a>
 						</div>
 					</div>
 
