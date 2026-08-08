@@ -742,6 +742,16 @@ td.gap-n {
   padding: 24px;
   box-shadow: var(--shadow-sm);
   text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mockup-frame:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--mint-deep);
 }
 
 .mockup-phone {
@@ -755,6 +765,26 @@ td.gap-n {
   justify-content: center;
   padding: 20px;
   margin-bottom: 16px;
+  position: relative;
+}
+
+.figma-badge {
+  margin-top: 16px;
+  padding: 6px 14px;
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--mint-deep);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.mockup-frame:hover .figma-badge {
+  background: var(--mint-deep);
+  color: #fff;
 }
 
 .erd-grid {
