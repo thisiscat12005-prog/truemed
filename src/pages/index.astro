@@ -926,6 +926,172 @@ import '../styles/truemed.css';
 							</div>
 						</a>
 					</div>
+
+					<!-- ERD Relationship Table -->
+					<div style="margin-top: 40px;">
+						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading); display: flex; align-items: center; gap: 10px;">
+							<span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 8px; font-size: 14px; font-weight: 700;">Data Dictionary</span>
+							Chi tiết Mối quan hệ giữa các Bảng (ERD Relationships)
+						</h3>
+						<div class="tablecard" style="overflow-x: auto; background: #ffffff; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow-sm);">
+							<table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+								<thead>
+									<tr style="background: var(--mint-soft); border-bottom: 2px solid var(--line);">
+										<th style="padding: 12px 16px; width: 6%; text-align: center; color: var(--navy); font-weight: 700;">STT</th>
+										<th style="padding: 12px 16px; width: 28%; color: var(--navy); font-weight: 700;">Các bảng quan hệ (Tables)</th>
+										<th style="padding: 12px 16px; width: 26%; color: var(--navy); font-weight: 700;">Khóa ngoại & Ánh xạ (Foreign Keys)</th>
+										<th style="padding: 12px 16px; width: 12%; text-align: center; color: var(--navy); font-weight: 700;">Quan hệ</th>
+										<th style="padding: 12px 16px; width: 28%; color: var(--navy); font-weight: 700;">Ý nghĩa nghiệp vụ</th>
+									</tr>
+								</thead>
+								<tbody style="color: #334155;">
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">1</td>
+										<td><b style="color: var(--navy);">USERS – PATIENT</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">PATIENT.user_id → USERS.user_id</code></td>
+										<td style="text-align: center;"><span style="background: #e0e7ff; color: #4338ca; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - 1</span></td>
+										<td>Một bệnh nhân có một tài khoản đăng nhập.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">2</td>
+										<td><b style="color: var(--navy);">USERS – DOCTOR</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">DOCTOR.user_id → USERS.user_id</code></td>
+										<td style="text-align: center;"><span style="background: #e0e7ff; color: #4338ca; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - 1</span></td>
+										<td>Một bác sĩ có một tài khoản đăng nhập.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">3</td>
+										<td><b style="color: var(--navy);">USERS – RECEPTIONIST</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">RECEPTIONIST.user_id → USERS.user_id</code></td>
+										<td style="text-align: center;"><span style="background: #e0e7ff; color: #4338ca; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - 1</span></td>
+										<td>Một lễ tân có một tài khoản đăng nhập.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">4</td>
+										<td><b style="color: var(--navy);">HOSPITAL – DOCTOR</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">HOSPITAL.hospital_id → DOCTOR.hospital_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh viện có nhiều bác sĩ; một bác sĩ chỉ thuộc một bệnh viện.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">5</td>
+										<td><b style="color: var(--navy);">SPECIALTY – DOCTOR</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">SPECIALTY.specialty_id → DOCTOR.specialty_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một chuyên khoa có nhiều bác sĩ; một bác sĩ thuộc một chuyên khoa.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">6</td>
+										<td><b style="color: var(--navy);">HOSPITAL – ROOM</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">HOSPITAL.hospital_id → ROOM.hospital_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh viện có nhiều phòng khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">7</td>
+										<td><b style="color: var(--navy);">HOSPITAL – SPECIALTY</b><br/><small style="color: #64748b;">(Bảng trung gian HOSPITAL_SPECIALTY)</small></td>
+										<td>
+											<code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 11px; display: block; margin-bottom: 2px;">HOSPITAL.hospital_id → HOSPITAL_SPECIALTY.hospital_id</code>
+											<code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 11px; display: block;">SPECIALTY.specialty_id → HOSPITAL_SPECIALTY.specialty_id</code>
+										</td>
+										<td style="text-align: center;"><span style="background: #fef3c7; color: #b45309; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">N - N</span></td>
+										<td>Một bệnh viện có nhiều chuyên khoa và một chuyên khoa có thể có ở nhiều bệnh viện.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">8</td>
+										<td><b style="color: var(--navy);">DOCTOR – DOCTOR_SCHEDULES</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">DOCTOR.doctor_id → DOCTOR_SCHEDULES.doctor_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bác sĩ có nhiều lịch làm việc.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">9</td>
+										<td><b style="color: var(--navy);">PATIENT – APPOINTMENT</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">PATIENT.patient_id → APPOINTMENT.patient_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh nhân có thể đặt nhiều lịch khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">10</td>
+										<td><b style="color: var(--navy);">HOSPITAL – APPOINTMENT</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">HOSPITAL.hospital_id → APPOINTMENT.hospital_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh viện có nhiều lịch hẹn khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">11</td>
+										<td><b style="color: var(--navy);">DOCTOR_SCHEDULES – APPOINTMENT</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">DOCTOR_SCHEDULES.schedule_id → APPOINTMENT.schedule_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một khung giờ làm việc của bác sĩ khám có nhiều bệnh nhân đặt.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">12</td>
+										<td><b style="color: var(--navy);">APPOINTMENT – MEDICAL_RECORDS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">APPOINTMENT.appointment_id → MEDICAL_RECORDS.appointment_id</code></td>
+										<td style="text-align: center;"><span style="background: #e0e7ff; color: #4338ca; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - 1</span></td>
+										<td>Một lịch khám tạo một bệnh án.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">13</td>
+										<td><b style="color: var(--navy);">DOCTOR – MEDICAL_RECORDS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">DOCTOR.doctor_id → MEDICAL_RECORDS.doctor_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bác sĩ tạo nhiều bệnh án.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">14</td>
+										<td><b style="color: var(--navy);">MEDICAL_RECORDS – PRESCRIPTION_ITEMS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">MEDICAL_RECORDS.record_id → PRESCRIPTION_ITEMS.record_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh án/đơn thuốc có nhiều thuốc chi tiết.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">15</td>
+										<td><b style="color: var(--navy);">MEDICAL_RECORDS – FOLLOW_UP_APPOINTMENTS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">MEDICAL_RECORDS.record_id → FOLLOW_UP_APPOINTMENTS.record_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh án có thể phát sinh nhiều lịch tái khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">16</td>
+										<td><b style="color: var(--navy);">PATIENT – FOLLOW_UP_APPOINTMENTS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">PATIENT.patient_id → FOLLOW_UP_APPOINTMENTS.patient_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh nhân có nhiều lịch tái khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">17</td>
+										<td><b style="color: var(--navy);">DOCTOR – FOLLOW_UP_APPOINTMENTS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">DOCTOR.doctor_id → FOLLOW_UP_APPOINTMENTS.doctor_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bác sĩ có thể chỉ định nhiều lịch tái khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">18</td>
+										<td><b style="color: var(--navy);">SERVICES – SPECIALTY</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">SERVICES.department_id → SPECIALTY.department_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một chuyên khoa có nhiều dịch vụ khám.</td>
+									</tr>
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="text-align: center; font-weight: 600; color: #64748b;">19</td>
+										<td><b style="color: var(--navy);">SERVICES – APPOINTMENTS</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">SERVICES.service_id → APPOINTMENTS.service_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một dịch vụ có thể được nhiều bệnh nhân đặt lịch.</td>
+									</tr>
+									<tr>
+										<td style="text-align: center; font-weight: 600; color: #64748b;">20</td>
+										<td><b style="color: var(--navy);">PATIENT – NOTIFICATION</b></td>
+										<td><code style="background: #f1f5f9; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-size: 12px;">PATIENT.patient_id → NOTIFICATION.patient_id</code></td>
+										<td style="text-align: center;"><span style="background: #dcfce7; color: #15803d; font-weight: 700; padding: 2px 8px; border-radius: 12px; font-size: 12px;">1 - N</span></td>
+										<td>Một bệnh nhân có thể nhận nhiều thông báo.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
