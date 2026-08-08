@@ -542,46 +542,35 @@ import '../styles/truemed.css';
 					<!-- Table 1: Problem Statement -->
 					<div style="margin-bottom: 40px; margin-top: 24px;">
 						<h3 style="font-size: 20px; color: var(--navy); margin-bottom: 16px; font-family: var(--font-heading);">1. Problem Statement (Phát biểu vấn đề)</h3>
-						<div class="tablecard">
-							<table>
+						<div class="tablecard" style="overflow-x: auto; background: #ffffff; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow-sm);">
+							<table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
 								<thead>
-									<tr>
-										<th style="width: 25%;">Những vấn đề cốt lõi</th>
-										<th style="width: 50%;">Mô tả chi tiết</th>
-										<th style="width: 25%;">Tính năng giải quyết</th>
+									<tr style="background: #0f172a; border-bottom: 2px solid var(--line);">
+										<th style="padding: 14px 18px; width: 30%; color: #ffffff; font-weight: 700;">Vấn đề</th>
+										<th style="padding: 14px 18px; width: 35%; color: #ffffff; font-weight: 700;">Bối cảnh cụ thể</th>
+										<th style="padding: 14px 18px; width: 35%; color: #ffffff; font-weight: 700;">Hậu quả</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td><b style="color: #b23a3a;">Quy trình đặt lịch khám thiếu chủ động</b></td>
-										<td>Người bệnh chưa thể chủ động lựa chọn bác sĩ, khung giờ phù hợp và biết chính xác thời gian được khám. Điều này dẫn đến thời gian chờ đợi kéo dài và ảnh hưởng đến lịch trình cá nhân.</td>
-										<td>
-											<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Đăng ký khám</span></li>
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Chọn bác sĩ</span></li>
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Chọn khung giờ</span></li>
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Đặt lịch</span></li>
+								<tbody style="color: #334155;">
+									<tr style="border-bottom: 1px solid var(--line);">
+										<td style="padding: 16px 18px; vertical-align: top;"><b style="color: #b23a3a; font-size: 14.5px;">Quy trình đăng ký khám còn phụ thuộc vào thao tác trực tiếp</b></td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">Người bệnh phải đến bệnh viện để đăng ký hoặc chờ xếp hàng</td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">
+											<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px;">
+												<li>Tăng thời gian chờ đợi, giảm mức độ hài lòng của người bệnh</li>
+												<li>Gia tăng áp lực vận hành của bệnh viện & ùn tắc cục bộ</li>
 											</ul>
 										</td>
 									</tr>
-									<tr>
-										<td><b style="color: #b23a3a;">Thông tin khám chữa bệnh chưa quản lý tập trung</b></td>
-										<td>Bệnh án và đơn thuốc được lưu trữ rời rạc, khiến người bệnh khó theo dõi lịch sử điều trị và cung cấp thông tin đầy đủ cho bác sĩ trong các lần khám sau.</td>
-										<td>
-											<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Quản lý bệnh án</span></li>
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Quản lý đơn thuốc</span></li>
-											</ul>
-										</td>
+									<tr style="border-bottom: 1px solid var(--line); background: #f8fafc;">
+										<td style="padding: 16px 18px; vertical-align: top;"><b style="color: #b23a3a; font-size: 14.5px;">Thông tin khám chữa bệnh chưa được quản lý tập trung</b></td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">Hồ sơ bệnh án và đơn thuốc được lưu trữ rời rạc</td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">Khó tra cứu lịch sử điều trị và hỗ trợ quyết định lâm sàng</td>
 									</tr>
-									<tr>
-										<td><b style="color: #b23a3a;">Thiếu hỗ trợ sau khám</b></td>
-										<td>Người bệnh phải tự ghi nhớ lịch tái khám và quản lý thông tin điều trị. Việc thiếu cơ chế nhắc nhở và theo dõi làm tăng nguy cơ bỏ lỡ lịch hẹn hoặc không tuân thủ đúng phác đồ điều trị.</td>
-										<td>
-											<ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-												<li style="display: flex; align-items: center; gap: 6px;"><span style="color: #10b981; font-weight: bold;">•</span> <span style="background: #e6f4ea; color: #047857; font-weight: 600; padding: 3px 10px; border-radius: 6px; font-size: 13px; border: 1px solid #a7f3d0; display: inline-block;">Nhắc tái khám</span></li>
-											</ul>
-										</td>
+									<tr style="background: #ffffff;">
+										<td style="padding: 16px 18px; vertical-align: top;"><b style="color: #b23a3a; font-size: 14.5px;">Công tác theo dõi sau khám còn hạn chế</b></td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">Chưa có cơ chế hỗ trợ người bệnh theo dõi lịch tái khám</td>
+										<td style="padding: 16px 18px; vertical-align: top; line-height: 1.6;">Tăng nguy cơ bỏ lỡ lịch hẹn và gián đoạn điều trị</td>
 									</tr>
 								</tbody>
 							</table>
