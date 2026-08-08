@@ -857,51 +857,19 @@ import '../styles/truemed.css';
 						<h2>Entity Relationship Diagram (ERD)</h2>
 					</div>
 					<p class="sec-desc">
-						Mô hình cơ sở dữ liệu quan hệ đảm bảo an toàn và tính toàn vẹn dữ liệu y tế.
+						Mô hình cơ sở dữ liệu quan hệ đảm bảo an toàn và tính toàn vẹn dữ liệu y tế. (Nhấp vào hình ảnh để xem sơ đồ chi tiết trên DrawSQL)
 					</p>
 
-					<div class="erd-grid">
-						<div class="erd-card">
-							<div class="erd-head">
-								<span>PATIENTS (Bệnh nhân)</span>
-								<i class="fa-solid fa-database"></i>
+					<div class="erd-image-wrapper" style="margin-top: 24px; text-align: center;">
+						<a href="https://drawsql.app/teams/hng-nh-workspace/diagrams/erd-hospital" target="_blank" rel="noopener noreferrer" style="display: block; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; transition: transform 0.3s ease, box-shadow 0.3s ease; background: #ffffff;">
+							<img src="/erd.png" alt="ERD Hospital TRUEMED Diagram" style="width: 100%; height: auto; display: block; max-height: 650px; object-fit: contain; padding: 12px; background: #fff;" />
+							<div class="erd-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent); color: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+								<span style="font-weight: 600; font-size: 15px;"><i class="fa-solid fa-diagram-project" style="margin-right: 8px;"></i> Sơ đồ ERD Hospital — DrawSQL</span>
+								<span style="padding: 6px 14px; background: #0284c7; border-radius: 6px; font-weight: 600; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
+									Mở trong DrawSQL <i class="fa-solid fa-arrow-up-right-from-square"></i>
+								</span>
 							</div>
-							<ul class="erd-list">
-								<li><span class="pk">PK patient_id</span> <span>UUID</span></li>
-								<li><span>full_name</span> <span>VARCHAR</span></li>
-								<li><span>phone_number</span> <span>VARCHAR</span></li>
-								<li><span>date_of_birth</span> <span>DATE</span></li>
-								<li><span>medical_code</span> <span>VARCHAR</span></li>
-							</ul>
-						</div>
-
-						<div class="erd-card">
-							<div class="erd-head">
-								<span>DOCTORS (Bác sĩ)</span>
-								<i class="fa-solid fa-database"></i>
-							</div>
-							<ul class="erd-list">
-								<li><span class="pk">PK doctor_id</span> <span>UUID</span></li>
-								<li><span>doctor_name</span> <span>VARCHAR</span></li>
-								<li><span>specialty</span> <span>VARCHAR</span></li>
-								<li><span>hospital_name</span> <span>VARCHAR</span></li>
-								<li><span>experience_years</span> <span>INT</span></li>
-							</ul>
-						</div>
-
-						<div class="erd-card">
-							<div class="erd-head">
-								<span>APPOINTMENTS (Lịch hẹn)</span>
-								<i class="fa-solid fa-database"></i>
-							</div>
-							<ul class="erd-list">
-								<li><span class="pk">PK appointment_id</span> <span>UUID</span></li>
-								<li><span class="fk">FK patient_id</span> <span>UUID</span></li>
-								<li><span class="fk">FK doctor_id</span> <span>UUID</span></li>
-								<li><span>slot_time</span> <span>DATETIME</span></li>
-								<li><span>status</span> <span>ENUM</span></li>
-							</ul>
-						</div>
+						</a>
 					</div>
 				</div>
 			</section>
